@@ -23,7 +23,7 @@ yarn add @clickhouse/client
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { ClickHouseModule } from 'nestjs-clickhouse';
+import { ClickHouseModule } from 'your-clickhouse-module';
 
 @Module({
   imports: [
@@ -43,7 +43,7 @@ export class AppModule {}
 ```typescript
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { ClickHouseModule } from 'nestjs-clickhouse';
+import { ClickHouseModule } from 'your-clickhouse-module';
 
 @Module({
   imports: [
@@ -72,7 +72,7 @@ import {
   ClickHouseModule,
   ClickHouseOptionsFactory,
   ClickHouseModuleOptions,
-} from 'nestjs-clickhouse';
+} from 'your-clickhouse-module';
 
 @Injectable()
 export class ClickHouseConfigService implements ClickHouseOptionsFactory {
@@ -104,7 +104,7 @@ export class AppModule {}
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { ClickHouseModule } from 'nestjs-clickhouse';
+import { ClickHouseModule } from 'your-clickhouse-module';
 
 @Module({
   imports: [
@@ -131,7 +131,7 @@ export class AppModule {}
 ```typescript
 import { Injectable } from '@nestjs/common';
 import type { ClickHouseClient } from '@clickhouse/client';
-import { InjectClickHouse } from 'nestjs-clickhouse';
+import { InjectClickHouse } from 'your-clickhouse-module';
 
 @Injectable()
 export class UserService {
@@ -162,7 +162,7 @@ export class UserService {
 ```typescript
 import { Injectable } from '@nestjs/common';
 import type { ClickHouseClient } from '@clickhouse/client';
-import { InjectClickHouse } from 'nestjs-clickhouse';
+import { InjectClickHouse } from 'your-clickhouse-module';
 
 @Injectable()
 export class LogService {
@@ -185,7 +185,7 @@ export class LogService {
 ```typescript
 import { Inject, Injectable } from '@nestjs/common';
 import type { ClickHouseClient } from '@clickhouse/client';
-import { getConnectionToken } from 'nestjs-clickhouse';
+import { getConnectionToken } from 'your-clickhouse-module';
 
 @Injectable()
 export class AnalyticsService {
@@ -198,7 +198,7 @@ export class AnalyticsService {
 
 ## Module Structure
 
-```
+```text
 lib/
 ├── index.ts                              # Re-exports
 ├── clickhouse.module.ts                  # Facade (forRoot, forRootAsync)
